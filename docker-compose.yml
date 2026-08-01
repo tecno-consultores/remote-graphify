@@ -12,11 +12,19 @@ services:
     container_name: graphify
     pull_policy: always
     restart: always
+    command: uvx --from graphifyy python -m graphify.serve graphify-out/graph.json --transport http --host 0.0.0.0 --port 8080
     ports:
       - 8080:8080
-    command: uvx --from graphifyy python -m graphify.serve graphify-out/graph.json --transport http --host 0.0.0.0 --port 8080
     environment:
       - OLLAMA_BASE_URL=http://localhost:11434
+      - GRAPHIFY_OLLAMA_KEEP_ALIVE=10
+#      - OLLAMA_MODEL=
+#      - ANTHROPIC_API_KEY=example
+#      - ANTHROPIC_MODEL=claude-sonnet-4-6
+#      - GEMINI_API_KEY=example
+#      - OPENAI_API_KEY=example
+#      - OPENAI_BASE_URL=https://api.openai.com/v1
+#      - OPENAI_MODEL=gpt-4.1-mini
     volumes:
       - ./app:/app
     logging:
