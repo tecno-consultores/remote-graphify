@@ -1,5 +1,5 @@
 FROM sinfallas/base-python-uv:latest
-LABEL maintainer="Jesus Palencia sinfallas@gmail.com"
+LABEL org.opencontainers.image.authors="sinfallas@gmail.com"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH="/root/.local/bin:$PATH"
@@ -9,3 +9,5 @@ RUN apt update && apt -y dist-upgrade && apt -y install --no-install-recommends 
 RUN uv tool install "graphifyy[all]"
 
 EXPOSE 8080
+ARG BUILD_DATE
+LABEL org.opencontainers.image.created=$BUILD_DATE
