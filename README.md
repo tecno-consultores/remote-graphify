@@ -6,19 +6,21 @@ A containerized implementation of [Graphify](https://github.com/Graphify-Labs/gr
 * **MCP Ready**: Exposes Graphify's API over HTTP (SSE) for seamless agent integration.
 * **Multi-LLM Support**: Pre-configured environment variables for Ollama, Anthropic, Gemini, and OpenAI.
 * **IPv6 Enabled**: Configured for modern networking architectures with IPv6 support.
-* **Pre-installed Dependencies**: Built with `uv` and includes `graphifyy[all]` for maximum compatibility out-of-the-box.
+* **Immutable & Deterministic**: Built directly with `uv tool`, meaning `graphifyy[all]` is pre-baked into the image. No downloads at runtime.
 
 ## Quick Start
 
 ### 1. Extract your Graph
-The MCP server reads from a static graph file. Before starting the server, you must generate the `graph.json` file from your project code. Run this locally or via an ephemeral container inside your project directory:
+The MCP server reads from a static graph file. Before starting the server, you must generate the `graph.json` file from your project code. 
+
+Run this locally (or inside an ephemeral container) in your project directory (e.g., `./app`):
 ```bash
 uvx graphifyy extract
 ```
-This will create a `graphify-out/` directory containing the required data.
+This will create a `graphify-out/` directory containing the required data. Make sure this folder is located inside the `./app` directory mapped in your `docker-compose.yml`.
 
 ### 2. Start the Server
-Use the provided `docker-compose.yml` to bring up the service:
+Use the provided `docker-compose.yml` to bring up the service. The container will automatically use the pre-installed binary to serve your graph.
 ```bash
 docker compose up -d
 ```
@@ -45,4 +47,3 @@ Uncomment and populate the relevant variables for cloud providers:
 
 ---
 **Docker Hub**: [sinfallas/remote-graphify](https://hub.docker.com/r/sinfallas/remote-graphify)
-
