@@ -47,3 +47,6 @@ Uncomment and populate the relevant variables for cloud providers:
 
 ---
 **Docker Hub**: [sinfallas/remote-graphify](https://hub.docker.com/r/sinfallas/remote-graphify)
+
+
+Copyright (C) 2026 Jesus Palencia <sinfallas@gmail.com> (Creado en Tecno Consultores)

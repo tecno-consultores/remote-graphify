@@ -1,6 +1,6 @@
 ARG BASE_VERSION=latest 
 FROM sinfallas/base-python-uv:${BASE_VERSION}
-LABEL org.opencontainers.image.authors="sinfallas@gmail.com"
+LABEL org.opencontainers.image.authors="Jesus Palencia <sinfallas@gmail.com> (Creado en Tecno Consultores)"
 LABEL description="Servidor API de Graphifyy optimizado con UV"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH="/root/.local/bin:$PATH"
