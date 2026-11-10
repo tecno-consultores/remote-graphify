@@ -1,4 +1,22 @@
-* commit 01965dcd65e3f34d9c1d04209a2fd1081011d1b4 (HEAD -> main, origin/main, origin/HEAD)
+* commit e63888d6ffe3d8d58d1515bccc95212a3861dc28 (HEAD -> main)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Mon Nov 9 23:04:22 2026 -0400
+| 
+|     feat(security): aplicar hardening non-root, límites en compose y modo estricto en build
+| 
+* commit f63f8313e46df95b66c52629206a75bc6b30241e (origin/main, origin/HEAD)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Mon Nov 9 15:57:59 2026 -0400
+| 
+|     Actualizacion automatica
+| 
+* commit 99e4f4c2e041c1d3f9998430573ecfa19eccbaf9
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Oct 10 19:18:35 2026 -0400
+| 
+|     * changelog
+| 
+* commit 01965dcd65e3f34d9c1d04209a2fd1081011d1b4
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sat Oct 10 19:18:33 2026 -0400
 | 
