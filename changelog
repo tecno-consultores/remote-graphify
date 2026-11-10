@@ -1,10 +1,22 @@
-* commit d936df6df16fbcc59f41cd2056a41cc1c4971da0 (HEAD -> main)
+* commit 3ef7224b76536c4007545d03a91cc4aa5a8fbfd2 (HEAD -> main)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Mon Nov 9 23:32:22 2026 -0400
+| 
+|     fix(mcp): usar graphify-mcp y wrapper retrocompatible para graphifyy serve en /mcp
+| 
+* commit dd694f7bdcf824fbc8a290f2c8a061fff83c84dc (origin/main, origin/HEAD)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Mon Nov 9 23:20:07 2026 -0400
+| 
+|     * changelog
+| 
+* commit d936df6df16fbcc59f41cd2056a41cc1c4971da0
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Mon Nov 9 23:20:07 2026 -0400
 | 
 |     fix(build): excluir extra video sin wheels cp315 en graphifyy para Python 3.15
 | 
-* commit 83f95932f4c577cd60a57910fc83c1c17339d3a8 (origin/main, origin/HEAD)
+* commit 83f95932f4c577cd60a57910fc83c1c17339d3a8
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Mon Nov 9 23:06:59 2026 -0400
 | 
