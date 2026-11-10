@@ -26,8 +26,8 @@ docker compose up -d
 ```
 
 ### 3. Connect your Agent
-Configure your agent (e.g., Hermes) to connect to the remote MCP server using the SSE transport. If both containers share the same Docker network, use the internal hostname:
-* **Endpoint URL**: `http://graphify:8080/sse` 
+Configure your agent (e.g., Hermes) to connect to the remote MCP server using the Streamable HTTP transport. If both containers share the same Docker network, use the internal hostname:
+* **Endpoint URL**: `http://graphify:8080/mcp` 
 
 ## Configuration Options
 Modify the `environment` section in your `docker-compose.yml` to configure your preferred LLM provider.
