@@ -35,7 +35,7 @@ Modify the `environment` section in your `docker-compose.yml` to configure your 
 ### Local Models (Ollama)
 If you are running Ollama on your Docker host machine, be sure to use `host.docker.internal` or your host's local IP address instead of `localhost`:
 ```yaml
-OLLAMA_BASE_URL=[http://host.docker.internal:11434](http://host.docker.internal:11434)
+OLLAMA_BASE_URL=http://host.docker.internal:11434
 GRAPHIFY_OLLAMA_KEEP_ALIVE=10
 ```
 

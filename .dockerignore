@@ -5,3 +5,9 @@ docker-compose.yml
 .idea/
 .buildx-cache/
 .env
+app/
+README.md
+LICENSE
+AUTHORS.md
+changelog
+build

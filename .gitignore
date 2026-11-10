@@ -1,3 +1,8 @@
 .idea/
+.vscode/
 .buildx-cache/
 .env
+app/
+graphify-out/cache/
+*.swp
+*~

@@ -1,23 +1,39 @@
 #!/usr/bin/env bash
 # Made by Sinfallas <sinfallas@yahoo.com>
 # Licence: GPL-2
+set -euo pipefail
 
-if [[ "$EUID" = "0" ]]; then
-	echo -e "\e[00;31mERROR: NO debe ser root.\e[00m"
+if [[ "${EUID}" -eq 0 ]]; then
+	echo -e "\e[00;31mERROR: NO debe ser root.\e[00m" >&2
 	exit 1
 fi
 
 clear
-CURRENT_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+CURRENT_DATE="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+BUILDER_NAME="container-builder"
+
+cleanup() {
+	docker buildx rm "${BUILDER_NAME}" 2>/dev/null || true
+}
+trap cleanup EXIT
 
 docker run --privileged --rm tonistiigi/binfmt --install all
-docker buildx rm container-builder
-docker buildx create --name container-builder --driver docker-container --bootstrap --use
-docker buildx build --builder=container-builder --platform linux/arm64,linux/amd64 --build-arg BUILD_DATE=$CURRENT_DATE --push -t sinfallas/remote-graphify:latest -f Dockerfile .
-docker buildx rm container-builder
-docker system prune -af
-docker builder prune -af
-docker buildx prune -af
+docker buildx rm "${BUILDER_NAME}" 2>/dev/null || true
+docker buildx create --name "${BUILDER_NAME}" --driver docker-container --bootstrap --use
+
+docker buildx build \
+	--builder="${BUILDER_NAME}" \
+	--platform linux/arm64,linux/amd64 \
+	--build-arg "BUILD_DATE=${CURRENT_DATE}" \
+	--push \
+	-t sinfallas/remote-graphify:latest \
+	-f Dockerfile .
+
+if [[ "${1:-}" == "--prune" ]]; then
+	docker system prune -af
+	docker builder prune -af
+	docker buildx prune -af
+fi
 
 echo "finalizado..."
 exit 0
