@@ -20,8 +20,9 @@ RUN apt-get update && \
     rm -rf /var/lib/{apt,dpkg,cache,log} /var/cache/* /var/log/apt/* /tmp/*
 
 ARG GRAPHIFYY_VERSION=""
+ARG GRAPHIFYY_EXTRAS="mcp,neo4j,falkordb,pdf,watch,svg,leiden,office,google,postgres,kimi,ollama,bedrock,anthropic,gemini,openai,chinese,sql,pascal,dm,terraform,ocaml,commonlisp,robot,vbnet,r,erlang,solidity"
 RUN mkdir -p /opt/uv-tools && \
-    uv tool install --no-cache "graphifyy[all]${GRAPHIFYY_VERSION}" && \
+    uv tool install --no-cache "graphifyy[${GRAPHIFYY_EXTRAS}]${GRAPHIFYY_VERSION}" && \
     if [ -x /usr/local/bin/graphifyy ] && [ ! -e /usr/local/bin/graphify ]; then \
       ln -s /usr/local/bin/graphifyy /usr/local/bin/graphify; \
     elif [ -x /usr/local/bin/graphify ] && [ ! -e /usr/local/bin/graphifyy ]; then \
