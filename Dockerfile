@@ -12,9 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 WORKDIR /app
 
-RUN groupadd -g 10001 appgroup && \
-    useradd -u 10001 -g appgroup -m -s /sbin/nologin appuser && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get -y dist-upgrade && \
     apt-get -y install --no-install-recommends --no-install-suggests curl ca-certificates && \
     apt-get clean && \
@@ -29,9 +27,7 @@ RUN mkdir -p /opt/uv-tools && \
     elif [ -x /usr/local/bin/graphify ] && [ ! -e /usr/local/bin/graphifyy ]; then \
       ln -s /usr/local/bin/graphify /usr/local/bin/graphifyy; \
     fi && \
-    chown -R appuser:appgroup /app /opt/uv-tools
-
-USER appuser
+    chmod -R a+rX /opt/uv-tools
 
 EXPOSE 8080
 
