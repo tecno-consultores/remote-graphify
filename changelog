@@ -1,10 +1,22 @@
-* commit e63888d6ffe3d8d58d1515bccc95212a3861dc28 (HEAD -> main)
+* commit 171c5df6befb7ca17fc232d10db44ee69ba963a4 (HEAD -> main)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Mon Nov 9 23:06:59 2026 -0400
+| 
+|     fix(volumes): restaurar permisos de escritura en /app para generación de grafos
+| 
+* commit afc024edb3da6106e256d9f92af70fc68e539d97 (origin/main, origin/HEAD)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Mon Nov 9 23:04:22 2026 -0400
+| 
+|     * changelog
+| 
+* commit e63888d6ffe3d8d58d1515bccc95212a3861dc28
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Mon Nov 9 23:04:22 2026 -0400
 | 
 |     feat(security): aplicar hardening non-root, límites en compose y modo estricto en build
 | 
-* commit f63f8313e46df95b66c52629206a75bc6b30241e (origin/main, origin/HEAD)
+* commit f63f8313e46df95b66c52629206a75bc6b30241e
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Mon Nov 9 15:57:59 2026 -0400
 | 
